@@ -95,3 +95,4 @@ Q:\Documents\ROUNDS Modding\VortexsCards\VortexsCards\VortexsCards\bin\Debug\net
 Q:\Documents\ROUNDS Modding\VortexsCards\VortexsCards\VortexsCards\obj\Debug\netstandard2.1\VortexsC.EB78420E.Up2Date
 Q:\Documents\ROUNDS Modding\VortexsCards\VortexsCards\VortexsCards\obj\Debug\netstandard2.1\VortexsCards.dll
 Q:\Documents\ROUNDS Modding\VortexsCards\VortexsCards\VortexsCards\obj\Debug\netstandard2.1\VortexsCards.pdb
+Q:\Documents\ROUNDS Modding\VortexsCards\VortexsCards\VortexsCards\bin\Debug\netstandard2.1\ZeroGBulletPatch.dll

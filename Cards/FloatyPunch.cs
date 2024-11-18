@@ -10,14 +10,13 @@ using UnityEngine;
 
 namespace VortexsCards.Cards
 {
-    class BouncyTradeoff : CustomCard
+    class FloatyPunch : CustomCard
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
-            gun.reflects = 20;
-            gun.attackSpeedMultiplier = 1.75f;
-            gun.dmgMOnBounce = 1.1f;
+            gun.gravity = 1;
+            gun.projectielSimulatonSpeed = 0.5f;
             cardInfo.allowMultiple = true;
             
             //UnityEngine.Debug.Log($"[{VortexsCards.ModInitials}][Card] {GetTitle()} has been setup.");
@@ -25,10 +24,7 @@ namespace VortexsCards.Cards
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Edits values on player when card is selected
-            gunAmmo.maxAmmo -= 2;
-            gunAmmo.reloadTimeAdd += 1.5f;
-            gun.damage -= 0.5f;
-            gun.knockback -= 0.5f;
+            gun.knockback += 2;
 
             //UnityEngine.Debug.Log($"[{VortexsCards.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
         }
@@ -42,11 +38,11 @@ namespace VortexsCards.Cards
 
         protected override string GetTitle()
         {
-            return "Bouncy Tradeoff";
+            return "Floaty Punch";
         }
         protected override string GetDescription()
         {
-            return null;
+            return "Makes your bullets glide through the air and knock enemies back very far";
         }
         protected override GameObject GetCardArt()
         {
@@ -54,7 +50,7 @@ namespace VortexsCards.Cards
         }
         protected override CardInfo.Rarity GetRarity()
         {
-            return CardInfo.Rarity.Uncommon;
+            return CardInfo.Rarity.Common;
         }
         protected override CardInfoStat[] GetStats()
         {
@@ -63,50 +59,22 @@ namespace VortexsCards.Cards
                 new CardInfoStat()
                 {
                     positive = true,
-                    stat = "Bullet Bounces",
-                    amount = "+20",
+                    stat = "Bullet Gravity",
+                    amount = "No",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 },
                 new CardInfoStat()
                 {
-                    positive = false,
-                    stat = "DMG",
-                    amount = "A lot less",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "ATKSPD",
-                    amount = "-1.5s",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "AMMO",
-                    amount = "-2",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "Reload Time",
-                    amount = "+1.5s",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = false,
+                    positive = true,
                     stat = "Knockback",
-                    amount = "Less",
+                    amount = "A lot more",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
+                }
             };
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()
         {
-            return CardThemeColor.CardThemeColorType.FirepowerYellow;
+            return CardThemeColor.CardThemeColorType.TechWhite;
         }
         public override string GetModName()
         {

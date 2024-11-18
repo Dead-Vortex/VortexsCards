@@ -37,6 +37,7 @@ namespace VortexsCards
             instance = this;
             CustomCard.BuildCard<InfiniteAmmo>(); // Copy for every card
             CustomCard.BuildCard<BouncyTradeoff>();
+            CustomCard.BuildCard<FloatyPunch>();
         }
     }
 }
