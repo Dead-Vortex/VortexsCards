@@ -16,7 +16,7 @@ namespace VortexsCards
     [BepInPlugin(ModId, ModName, Version)]
     // The game our mod is associated with
     [BepInProcess("Rounds.exe")]
-    public class MyModName : BaseUnityPlugin
+    public class VortexsCards : BaseUnityPlugin
     {
         private const string ModId = "com.Vortex.rounds.VortexsCards";
         private const string ModName = "Vortex's Cards";
@@ -35,7 +35,8 @@ namespace VortexsCards
         void Start()
         {
             instance = this;
-            CustomCard.BuildCard<MyCardName>();
+            CustomCard.BuildCard<InfiniteAmmo>(); // Copy for every card
+            CustomCard.BuildCard<BouncyTradeoff>();
         }
     }
 }

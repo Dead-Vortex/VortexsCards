@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VortexsCards")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d9539826d1df6629cd26b42c877304cd244ebbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f516bd5b784322f40052c77cc2b664cecb33beed")]
 [assembly: System.Reflection.AssemblyProductAttribute("VortexsCards")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VortexsCards")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
