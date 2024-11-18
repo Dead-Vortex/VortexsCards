@@ -15,8 +15,9 @@ namespace VortexsCards.Cards
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
-            gun.gravity = 1;
+            gun.gravity = 0;
             gun.projectielSimulatonSpeed = 0.5f;
+            gun.speedMOnBounce = 1;
             cardInfo.allowMultiple = true;
             
             //UnityEngine.Debug.Log($"[{VortexsCards.ModInitials}][Card] {GetTitle()} has been setup.");
@@ -42,7 +43,7 @@ namespace VortexsCards.Cards
         }
         protected override string GetDescription()
         {
-            return "Makes your bullets glide through the air and knock enemies back very far";
+            return "Makes your bullets glide through the air and punch enemies away";
         }
         protected override GameObject GetCardArt()
         {
@@ -68,6 +69,13 @@ namespace VortexsCards.Cards
                     positive = true,
                     stat = "Knockback",
                     amount = "A lot more",
+                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
+                },
+                new CardInfoStat()
+                {
+                    positive = true,
+                    stat = "Projectile Speed",
+                    amount = "Less",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 }
             };
