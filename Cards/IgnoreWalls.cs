@@ -10,22 +10,19 @@ using UnityEngine;
 
 namespace VortexsCards.Cards
 {
-    class FloatyPunch : CustomCard
+    class IgnoreWalls : CustomCard
     {
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
-            gun.gravity = 0.5f;
-            gun.projectielSimulatonSpeed = 0.5f;
-            gun.speedMOnBounce = 1;
-            cardInfo.allowMultiple = true;
+            gun.ignoreWalls = true;
+            cardInfo.allowMultiple = false;
             
             //UnityEngine.Debug.Log($"[{VortexsCards.ModInitials}][Card] {GetTitle()} has been setup.");
         }
         public override void OnAddCard(Player player, Gun gun, GunAmmo gunAmmo, CharacterData data, HealthHandler health, Gravity gravity, Block block, CharacterStatModifiers characterStats)
         {
             //Edits values on player when card is selected
-            gun.knockback += 2;
 
             //UnityEngine.Debug.Log($"[{VortexsCards.ModInitials}][Card] {GetTitle()} has been added to player {player.playerID}.");
         }
@@ -39,11 +36,11 @@ namespace VortexsCards.Cards
 
         protected override string GetTitle()
         {
-            return "Floaty Punch";
+            return "Noclip Bullets";
         }
         protected override string GetDescription()
         {
-            return "Makes your bullets glide through the air and punch enemies away";
+            return "Makes your bullets clip through walls";
         }
         protected override GameObject GetCardArt()
         {
@@ -51,38 +48,15 @@ namespace VortexsCards.Cards
         }
         protected override CardInfo.Rarity GetRarity()
         {
-            return CardInfo.Rarity.Common;
+            return CardInfo.Rarity.Rare;
         }
         protected override CardInfoStat[] GetStats()
         {
-            return new CardInfoStat[]
-            {
-                new CardInfoStat()
-                {
-                    positive = true,
-                    stat = "Bullet Gravity",
-                    amount = "Low",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = true,
-                    stat = "Knockback",
-                    amount = "A lot more",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                },
-                new CardInfoStat()
-                {
-                    positive = true,
-                    stat = "Projectile Speed",
-                    amount = "Less",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                }
-            };
+            return null;
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()
         {
-            return CardThemeColor.CardThemeColorType.TechWhite;
+            return CardThemeColor.CardThemeColorType.EvilPurple;
         }
         public override string GetModName()
         {

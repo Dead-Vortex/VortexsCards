@@ -38,6 +38,8 @@ namespace VortexsCards
             CustomCard.BuildCard<InfiniteAmmo>(); // Copy for every card
             CustomCard.BuildCard<BouncyTradeoff>();
             CustomCard.BuildCard<FloatyPunch>();
+            CustomCard.BuildCard<IgnoreWalls>();
+            CustomCard.BuildCard<PurpleBullets>();
         }
     }
 }
